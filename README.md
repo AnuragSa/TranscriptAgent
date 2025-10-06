@@ -13,27 +13,35 @@ A Python script that processes academic transcript PDFs using Microsoft Document
 
 ## Predefined Fields
 
-The script extracts and maps the following information:
+The script extracts and maps the following information with clear distinction between required and optional fields:
 
 ### Student Information
-- First Name
-- Last Name
+
+#### Required Fields:
+- **Student Name**: Full name of the student
+- **Date of Birth**: Student's date of birth  
+- **School Name**: Name of the educational institution
+
+#### Optional Fields:
+- **School Address**: Physical address of the school (extracted if available)
 - Student ID
 - Graduation Date
 - Degree
 - Major
 - GPA
-- School Name
 
-### Course Information
-- Course Code
-- Course Description
-- Credits
-- Credits Earned
-- Grade
-- Pass/Fail Status
-- Semester
-- Year
+### Course Information (Repeated for ALL terms and courses)
+
+#### Required Fields:
+- **Course Code**: Course identifier/number
+- **Course Name**: Full course title/name
+- **Course Credits**: Number of credits for the course
+- **Course Grade**: Grade received (letter grade, percentage, etc.)
+- **Date Completed**: When the course was completed
+
+#### Optional Fields:
+- **Course Hours**: Course hours (if supplied)
+- **Term**: Academic term/semester information
 
 ## Prerequisites
 

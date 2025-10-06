@@ -11,8 +11,8 @@ from transcript_processor import TranscriptProcessor
 
 def main():
     # Example PDF path (you'll need to provide an actual PDF)
-    #pdf_path = "pdf/Transcript_Two_Student.pdf"
-    pdf_path = "pdf/JodwaySchool transcript.pdf"
+    pdf_path = "pdf/Transcript_Two_Student.pdf"
+    #pdf_path = "pdf/JodwaySchool transcript.pdf"
     
     if not os.path.exists(pdf_path):
         print(f"Error: Sample PDF not found at {pdf_path}")

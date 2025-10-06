@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Standardized Transcript JSON Schema",
-  "description": "Schema for the standardized JSON output format of the transcript processor",
+  "title": "Standardized Transcript JSON Schema v2.0",
+  "description": "Schema for the standardized JSON output format of the transcript processor with required/optional field separation",
   "type": "object",
   "required": [
     "transcript_metadata",
@@ -37,29 +37,17 @@
     },
     "student_information": {
       "type": "object",
-      "required": ["personal_details", "academic_details"],
+      "required": ["student_name", "date_of_birth", "school_name"],
       "properties": {
-        "personal_details": {
-          "type": "object",
-          "required": ["first_name", "last_name", "full_name", "student_id"],
-          "properties": {
-            "first_name": {"type": "string", "description": "Student's first name"},
-            "last_name": {"type": "string", "description": "Student's last name"},
-            "full_name": {"type": "string", "description": "Student's full name"},
-            "student_id": {"type": "string", "description": "Student's ID number"}
-          }
-        },
-        "academic_details": {
-          "type": "object",
-          "required": ["school_name", "degree", "major", "graduation_date", "gpa"],
-          "properties": {
-            "school_name": {"type": "string", "description": "Name of the educational institution"},
-            "degree": {"type": "string", "description": "Type of degree earned"},
-            "major": {"type": "string", "description": "Student's major field of study"},
-            "graduation_date": {"type": "string", "description": "Date of graduation"},
-            "gpa": {"type": "string", "description": "Grade point average"}
-          }
-        }
+        "student_name": {"type": ["string", "null"], "description": "Full name of the student (REQUIRED)"},
+        "date_of_birth": {"type": ["string", "null"], "description": "Student's date of birth (REQUIRED)"},
+        "school_name": {"type": ["string", "null"], "description": "Name of the educational institution (REQUIRED)"},
+        "school_address": {"type": ["string", "null"], "description": "Physical address of the school (optional)"},
+        "student_id": {"type": ["string", "null"], "description": "Student's ID number (optional)"},
+        "graduation_date": {"type": ["string", "null"], "description": "Date of graduation (optional)"},
+        "degree": {"type": ["string", "null"], "description": "Type of degree earned (optional)"},
+        "major": {"type": ["string", "null"], "description": "Student's major field of study (optional)"},
+        "gpa": {"type": ["string", "null"], "description": "Grade point average (optional)"}
       }
     },
     "academic_record": {
@@ -70,50 +58,15 @@
           "type": "array",
           "items": {
             "type": "object",
-            "required": [
-              "course_identification",
-              "enrollment_details", 
-              "credit_information",
-              "grade_information"
-            ],
+            "required": ["course_code", "course_name", "course_credits", "course_grade", "date_completed"],
             "properties": {
-              "course_identification": {
-                "type": "object",
-                "required": ["course_code", "course_title", "course_description"],
-                "properties": {
-                  "course_code": {"type": "string", "description": "Course code/number"},
-                  "course_title": {"type": "string", "description": "Course title"},
-                  "course_description": {"type": "string", "description": "Course description"}
-                }
-              },
-              "enrollment_details": {
-                "type": "object",
-                "required": ["semester", "year", "academic_period"],
-                "properties": {
-                  "semester": {"type": "string", "description": "Semester when course was taken"},
-                  "year": {"type": "string", "description": "Year when course was taken"},
-                  "academic_period": {"type": "string", "description": "Combined semester and year"}
-                }
-              },
-              "credit_information": {
-                "type": "object",
-                "required": ["credits_attempted", "credits_earned", "credit_type"],
-                "properties": {
-                  "credits_attempted": {"type": "string", "description": "Number of credits attempted"},
-                  "credits_earned": {"type": "string", "description": "Number of credits earned"},
-                  "credit_type": {"type": "string", "description": "Type of credit (standard, transfer, etc.)"}
-                }
-              },
-              "grade_information": {
-                "type": "object",
-                "required": ["letter_grade", "pass_fail_indicator", "grade_points", "grade_status"],
-                "properties": {
-                  "letter_grade": {"type": "string", "description": "Letter grade received"},
-                  "pass_fail_indicator": {"type": "string", "description": "Pass/Fail indicator if applicable"},
-                  "grade_points": {"type": "string", "description": "Grade points earned"},
-                  "grade_status": {"type": "string", "description": "Status of the grade (completed, in_progress, etc.)"}
-                }
-              }
+              "course_code": {"type": ["string", "null"], "description": "Course code/number (REQUIRED)"},
+              "course_name": {"type": ["string", "null"], "description": "Full course title/name (REQUIRED)"},
+              "course_credits": {"type": ["string", "null"], "description": "Number of credits for the course (REQUIRED)"},
+              "course_grade": {"type": ["string", "null"], "description": "Grade received (REQUIRED)"},
+              "date_completed": {"type": ["string", "null"], "description": "When the course was completed (REQUIRED)"},
+              "course_hours": {"type": ["string", "null"], "description": "Course hours if specified (optional)"},
+              "term": {"type": ["string", "null"], "description": "Academic term/semester (optional)"}
             }
           }
         },

@@ -2,117 +2,57 @@
   "transcript_metadata": {
     "processing_timestamp": "2025-10-06T12:00:00",
     "source_file": "sample_transcript.pdf",
-    "processing_version": "1.0",
+    "processing_version": "2.0",
     "total_courses": 4
   },
   "student_information": {
-    "personal_details": {
-      "first_name": "John",
-      "last_name": "Doe", 
-      "full_name": "John Doe",
-      "student_id": "123456789"
-    },
-    "academic_details": {
-      "school_name": "University of Example",
-      "degree": "Bachelor of Science",
-      "major": "Computer Science",
-      "graduation_date": "May 2023",
-      "gpa": "3.75"
-    }
+    "student_name": "John Doe",
+    "date_of_birth": "1995-03-15",
+    "school_name": "University of Example",
+    "school_address": "123 University Ave, College Town, ST 12345",
+    "student_id": "123456789",
+    "graduation_date": "May 2023",
+    "degree": "Bachelor of Science",
+    "major": "Computer Science",
+    "gpa": "3.75"
   },
   "academic_record": {
     "courses": [
       {
-        "course_identification": {
-          "course_code": "CS101",
-          "course_title": "Introduction to Computer Science",
-          "course_description": "Introduction to Computer Science"
-        },
-        "enrollment_details": {
-          "semester": "Fall",
-          "year": "2019",
-          "academic_period": "Fall 2019"
-        },
-        "credit_information": {
-          "credits_attempted": "3",
-          "credits_earned": "3",
-          "credit_type": "standard"
-        },
-        "grade_information": {
-          "letter_grade": "A",
-          "pass_fail_indicator": "",
-          "grade_points": "",
-          "grade_status": "completed"
-        }
+        "course_code": "CS101",
+        "course_name": "Introduction to Computer Science",
+        "course_credits": "3",
+        "course_grade": "A",
+        "date_completed": "2019-12-15",
+        "course_hours": "45",
+        "term": "Fall 2019"
       },
       {
-        "course_identification": {
-          "course_code": "MATH201",
-          "course_title": "Calculus II",
-          "course_description": "Calculus II"
-        },
-        "enrollment_details": {
-          "semester": "Spring",
-          "year": "2020",
-          "academic_period": "Spring 2020"
-        },
-        "credit_information": {
-          "credits_attempted": "4",
-          "credits_earned": "4",
-          "credit_type": "standard"
-        },
-        "grade_information": {
-          "letter_grade": "B+",
-          "pass_fail_indicator": "",
-          "grade_points": "",
-          "grade_status": "completed"
-        }
+        "course_code": "MATH201",
+        "course_name": "Calculus II",
+        "course_credits": "4",
+        "course_grade": "B+",
+        "date_completed": "2020-05-10",
+        "course_hours": "60",
+        "term": "Spring 2020"
       },
       {
-        "course_identification": {
-          "course_code": "CS301",
-          "course_title": "Data Structures and Algorithms",
-          "course_description": "Data Structures and Algorithms"
-        },
-        "enrollment_details": {
-          "semester": "Fall",
-          "year": "2021",
-          "academic_period": "Fall 2021"
-        },
-        "credit_information": {
-          "credits_attempted": "3",
-          "credits_earned": "3",
-          "credit_type": "standard"
-        },
-        "grade_information": {
-          "letter_grade": "A-",
-          "pass_fail_indicator": "",
-          "grade_points": "",
-          "grade_status": "completed"
-        }
+        "course_code": "CS301",
+        "course_name": "Data Structures and Algorithms",
+        "course_credits": "3",
+        "course_grade": "A-",
+        "date_completed": "2021-12-18",
+        "course_hours": null,
+        "term": "Fall 2021"
       },
       {
-        "course_identification": {
-          "course_code": "ENG102",
-          "course_title": "English Composition",
-          "course_description": "English Composition"
-        },
-        "enrollment_details": {
-          "semester": "Spring",
-          "year": "2020",
-          "academic_period": "Spring 2020"
-        },
-        "credit_information": {
-          "credits_attempted": "3",
-          "credits_earned": "3",
-          "credit_type": "standard"
-        },
-        "grade_information": {
-          "letter_grade": "B",
-          "pass_fail_indicator": "",
-          "grade_points": "",
-          "grade_status": "completed"
-        }
+        "course_code": "ENG102",
+        "course_name": "English Composition",
+        "course_credits": "3",
+        "course_grade": "B",
+        "date_completed": "2020-05-08",
+        "course_hours": null,
+        "term": "Spring 2020"
       }
     ],
     "summary_statistics": {

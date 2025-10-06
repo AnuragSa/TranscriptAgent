@@ -30,27 +30,28 @@ logger = logging.getLogger(__name__)
 @dataclass
 class Course:
     """Represents a single course entry in a transcript"""
-    course_code: Optional[str] = None
-    course_description: Optional[str] = None
-    credits: Optional[str] = None
-    credits_earned: Optional[str] = None
-    grade: Optional[str] = None
-    pass_fail: Optional[str] = None
-    semester: Optional[str] = None
-    year: Optional[str] = None
+    course_code: Optional[str] = None        # Required
+    course_name: Optional[str] = None        # Required (renamed from course_description)
+    course_credits: Optional[str] = None     # Required (renamed from credits)
+    course_hours: Optional[str] = None       # If supplied
+    course_grade: Optional[str] = None       # Required (renamed from grade)
+    date_completed: Optional[str] = None     # Required
+    term: Optional[str] = None               # For organizing by term/semester
 
 
 @dataclass
 class StudentInfo:
     """Represents student information from a transcript"""
-    first_name: Optional[str] = None
-    last_name: Optional[str] = None
+    student_name: Optional[str] = None       # Required - full name
+    date_of_birth: Optional[str] = None      # Required
+    school_name: Optional[str] = None        # Required
+    school_address: Optional[str] = None     # Optional but extract if available
+    # Keeping some legacy fields for compatibility
     student_id: Optional[str] = None
     graduation_date: Optional[str] = None
     degree: Optional[str] = None
     major: Optional[str] = None
     gpa: Optional[str] = None
-    school_name: Optional[str] = None
 
 
 @dataclass
@@ -67,48 +68,30 @@ class TranscriptData:
             "transcript_metadata": {
                 "processing_timestamp": "",  # Will be filled at processing time
                 "source_file": "",  # Will be filled at processing time
-                "processing_version": "1.0",
+                "processing_version": "2.0",
                 "total_courses": len(self.courses)
             },
             "student_information": {
-                "personal_details": {
-                    "first_name": self.student_info.first_name or "",
-                    "last_name": self.student_info.last_name or "",
-                    "full_name": f"{self.student_info.first_name or ''} {self.student_info.last_name or ''}".strip() or "",
-                    "student_id": self.student_info.student_id or ""
-                },
-                "academic_details": {
-                    "school_name": self.student_info.school_name or "",
-                    "degree": self.student_info.degree or "",
-                    "major": self.student_info.major or "",
-                    "graduation_date": self.student_info.graduation_date or "",
-                    "gpa": self.student_info.gpa or ""
-                }
+                "student_name": self.student_info.student_name,
+                "date_of_birth": self.student_info.date_of_birth,
+                "school_name": self.student_info.school_name,
+                "school_address": self.student_info.school_address,
+                "student_id": self.student_info.student_id,
+                "graduation_date": self.student_info.graduation_date,
+                "degree": self.student_info.degree,
+                "major": self.student_info.major,
+                "gpa": self.student_info.gpa
             },
             "academic_record": {
                 "courses": [
                     {
-                        "course_identification": {
-                            "course_code": course.course_code or "",
-                            "course_title": course.course_description or "",
-                            "course_description": course.course_description or ""
-                        },
-                        "enrollment_details": {
-                            "semester": course.semester or "",
-                            "year": course.year or "",
-                            "academic_period": f"{course.semester or ''} {course.year or ''}".strip() or ""
-                        },
-                        "credit_information": {
-                            "credits_attempted": course.credits or "",
-                            "credits_earned": course.credits_earned or "",
-                            "credit_type": "standard"  # Could be "standard", "transfer", "audit", etc.
-                        },
-                        "grade_information": {
-                            "letter_grade": course.grade or "",
-                            "pass_fail_indicator": course.pass_fail or "",
-                            "grade_points": "",  # Could be calculated if needed
-                            "grade_status": "completed"  # Could be "completed", "in_progress", "withdrawn", etc.
-                        }
+                        "course_code": course.course_code,
+                        "course_name": course.course_name,
+                        "course_credits": course.course_credits,
+                        "course_grade": course.course_grade,
+                        "date_completed": course.date_completed,
+                        "course_hours": course.course_hours,
+                        "term": course.term
                     }
                     for course in self.courses
                 ],
@@ -116,7 +99,7 @@ class TranscriptData:
                     "total_credits_attempted": "",  # Will be calculated
                     "total_credits_earned": "",     # Will be calculated
                     "total_courses": len(self.courses),
-                    "overall_gpa": self.student_info.gpa or ""
+                    "overall_gpa": self.student_info.gpa
                 }
             },
             "additional_information": {
@@ -237,28 +220,28 @@ Given the raw text from a transcript, extract the following information in VALID
 
 IMPORTANT: Your response must be ONLY valid JSON with no additional text, explanations, or markdown formatting.
 
-Extract this exact structure:
+Extract this exact structure with these REQUIRED and OPTIONAL fields:
 {
     "student_info": {
-        "first_name": "string or null",
-        "last_name": "string or null", 
+        "student_name": "string or null",
+        "date_of_birth": "string or null",
+        "school_name": "string or null",
+        "school_address": "string or null",
         "student_id": "string or null",
         "graduation_date": "string or null",
         "degree": "string or null",
         "major": "string or null",
-        "gpa": "string or null",
-        "school_name": "string or null"
+        "gpa": "string or null"
     },
     "courses": [
         {
             "course_code": "string or null",
-            "course_description": "string or null",
-            "credits": "string or null",
-            "credits_earned": "string or null",
-            "grade": "string or null",
-            "pass_fail": "string or null",
-            "semester": "string or null",
-            "year": "string or null"
+            "course_name": "string or null",
+            "course_credits": "string or null",
+            "course_hours": "string or null",
+            "course_grade": "string or null",
+            "date_completed": "string or null",
+            "term": "string or null"
         }
     ],
     "additional_info": {
@@ -266,10 +249,26 @@ Extract this exact structure:
     }
 }
 
+FIELD REQUIREMENTS:
+REQUIRED fields (must extract if available):
+- student_name: Full name of the student
+- date_of_birth: Student's date of birth
+- school_name: Name of the educational institution
+- course_code: Course identifier/number
+- course_name: Full course title/name
+- course_credits: Number of credits for the course
+- course_grade: Grade received (letter grade, percentage, etc.)
+- date_completed: When the course was completed
+
+OPTIONAL fields (extract if available):
+- school_address: Physical address of the school
+- course_hours: Course hours if specified
+
 Rules:
 - Only extract information that is clearly present in the text
 - Use null for missing information (not empty strings)
 - For courses, create separate entries for each course found
+- Repeat for ALL terms and courses on the transcript
 - Response must be valid JSON only - no explanations or formatting
 - If no information is found, still return the structure with null values"""
         
@@ -390,17 +389,14 @@ Rules:
         
         for course in transcript_data.courses:
             try:
-                if course.credits:
+                if course.course_credits:
                     # Try to extract numeric value from credits string
-                    credits_str = course.credits.replace(' ', '').replace('credits', '').replace('credit', '')
+                    credits_str = course.course_credits.replace(' ', '').replace('credits', '').replace('credit', '')
                     if credits_str.replace('.', '').isdigit():
                         total_credits_attempted += float(credits_str)
-                
-                if course.credits_earned:
-                    # Try to extract numeric value from credits earned string
-                    earned_str = course.credits_earned.replace(' ', '').replace('credits', '').replace('credit', '')
-                    if earned_str.replace('.', '').isdigit():
-                        total_credits_earned += float(earned_str)
+                        # For now, assume all attempted credits are earned if a grade is present
+                        if course.course_grade and course.course_grade.upper() not in ['F', 'FAIL', 'WD', 'W']:
+                            total_credits_earned += float(credits_str)
             except (ValueError, AttributeError):
                 # Skip courses with invalid credit information
                 continue
@@ -433,24 +429,44 @@ Rules:
         print("TRANSCRIPT PROCESSING RESULTS")
         print("="*80)
         
-        # Display student information
+        # Display student information with required/optional field indicators
         print("\nSTUDENT INFORMATION:")
         print("-" * 40)
-        student_dict = asdict(transcript_data.student_info)
-        for field, value in student_dict.items():
-            if value:
-                print(f"{field.replace('_', ' ').title()}: {value}")
         
-        # Display courses
+        # Show all fields with required/optional indicators
+        required_student_fields = ["student_name", "date_of_birth", "school_name"]
+        optional_student_fields = ["school_address", "student_id", "graduation_date", "degree", "major", "gpa"]
+        
+        for field in required_student_fields:
+            value = getattr(transcript_data.student_info, field, None)
+            status = "✅ Required" if value else "❌ MISSING REQUIRED"
+            print(f"  {field.replace('_', ' ').title()}: {value or 'null'} {status}")
+        
+        for field in optional_student_fields:
+            value = getattr(transcript_data.student_info, field, None)
+            status = "📝 Optional" if value else "📝 Optional (null)"
+            print(f"  {field.replace('_', ' ').title()}: {value or 'null'} {status}")
+        
+        # Display courses with required/optional field indicators
         print(f"\nCOURSES ({len(transcript_data.courses)} found):")
         print("-" * 40)
         if transcript_data.courses:
+            required_course_fields = ["course_code", "course_name", "course_credits", "course_grade", "date_completed"]
+            optional_course_fields = ["course_hours", "term"]
+            
             for i, course in enumerate(transcript_data.courses, 1):
                 print(f"\nCourse {i}:")
-                course_dict = asdict(course)
-                for field, value in course_dict.items():
-                    if value:
-                        print(f"  {field.replace('_', ' ').title()}: {value}")
+                
+                # Show all fields with required/optional indicators
+                for field in required_course_fields:
+                    value = getattr(course, field, None)
+                    status = "✅ Required" if value else "❌ MISSING REQUIRED"
+                    print(f"  {field.replace('_', ' ').title()}: {value or 'null'} {status}")
+                
+                for field in optional_course_fields:
+                    value = getattr(course, field, None)
+                    status = "📝 Optional" if value else "📝 Optional (null)"
+                    print(f"  {field.replace('_', ' ').title()}: {value or 'null'} {status}")
         else:
             print("No courses extracted")
         
