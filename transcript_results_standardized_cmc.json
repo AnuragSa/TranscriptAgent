@@ -1,0 +1,213 @@
+{
+  "transcript_metadata": {
+    "processing_timestamp": "2025-10-06T13:28:55.469015",
+    "source_file": "Transcript_Two_Student.pdf",
+    "processing_version": "1.0",
+    "total_courses": 7
+  },
+  "student_information": {
+    "personal_details": {
+      "first_name": "Kai",
+      "last_name": "",
+      "full_name": "Kai",
+      "student_id": "901031"
+    },
+    "academic_details": {
+      "school_name": "Campus Management School of Arts",
+      "degree": "Bachelor of Science",
+      "major": "French Culinary",
+      "graduation_date": "",
+      "gpa": "2.7760"
+    }
+  },
+  "academic_record": {
+    "courses": [
+      {
+        "course_identification": {
+          "course_code": "ART110",
+          "course_title": "Introduction to the Visual Arts (Repeat)",
+          "course_description": "Introduction to the Visual Arts (Repeat)"
+        },
+        "enrollment_details": {
+          "semester": "SPRING",
+          "year": "2025",
+          "academic_period": "SPRING 2025"
+        },
+        "credit_information": {
+          "credits_attempted": "2.00",
+          "credits_earned": "2.00",
+          "credit_type": "standard"
+        },
+        "grade_information": {
+          "letter_grade": "B-",
+          "pass_fail_indicator": "",
+          "grade_points": "",
+          "grade_status": "completed"
+        }
+      },
+      {
+        "course_identification": {
+          "course_code": "BIO200",
+          "course_title": "Evolutionary Biology",
+          "course_description": "Evolutionary Biology"
+        },
+        "enrollment_details": {
+          "semester": "SPRING",
+          "year": "2025",
+          "academic_period": "SPRING 2025"
+        },
+        "credit_information": {
+          "credits_attempted": "5.50",
+          "credits_earned": "5.50",
+          "credit_type": "standard"
+        },
+        "grade_information": {
+          "letter_grade": "C",
+          "pass_fail_indicator": "",
+          "grade_points": "",
+          "grade_status": "completed"
+        }
+      },
+      {
+        "course_identification": {
+          "course_code": "DIV101",
+          "course_title": "Diversity (Repeat)",
+          "course_description": "Diversity (Repeat)"
+        },
+        "enrollment_details": {
+          "semester": "SPRING",
+          "year": "2025",
+          "academic_period": "SPRING 2025"
+        },
+        "credit_information": {
+          "credits_attempted": "2.00",
+          "credits_earned": "2.00",
+          "credit_type": "standard"
+        },
+        "grade_information": {
+          "letter_grade": "B+",
+          "pass_fail_indicator": "",
+          "grade_points": "",
+          "grade_status": "completed"
+        }
+      },
+      {
+        "course_identification": {
+          "course_code": "BIO200L",
+          "course_title": "Evolutionary Biology",
+          "course_description": "Evolutionary Biology"
+        },
+        "enrollment_details": {
+          "semester": "SPRING",
+          "year": "2025",
+          "academic_period": "SPRING 2025"
+        },
+        "credit_information": {
+          "credits_attempted": "1.00",
+          "credits_earned": "1.00",
+          "credit_type": "standard"
+        },
+        "grade_information": {
+          "letter_grade": "A-",
+          "pass_fail_indicator": "",
+          "grade_points": "",
+          "grade_status": "completed"
+        }
+      },
+      {
+        "course_identification": {
+          "course_code": "SLI1",
+          "course_title": "Scientific Literacy",
+          "course_description": "Scientific Literacy"
+        },
+        "enrollment_details": {
+          "semester": "SPRING",
+          "year": "2025",
+          "academic_period": "SPRING 2025"
+        },
+        "credit_information": {
+          "credits_attempted": "4.00",
+          "credits_earned": "0.00",
+          "credit_type": "standard"
+        },
+        "grade_information": {
+          "letter_grade": "W",
+          "pass_fail_indicator": "",
+          "grade_points": "",
+          "grade_status": "completed"
+        }
+      },
+      {
+        "course_identification": {
+          "course_code": "DIV101",
+          "course_title": "Diversity (Repeat)",
+          "course_description": "Diversity (Repeat)"
+        },
+        "enrollment_details": {
+          "semester": "JUNE",
+          "year": "2025",
+          "academic_period": "JUNE 2025"
+        },
+        "credit_information": {
+          "credits_attempted": "2.00",
+          "credits_earned": "2.00",
+          "credit_type": "standard"
+        },
+        "grade_information": {
+          "letter_grade": "A",
+          "pass_fail_indicator": "",
+          "grade_points": "",
+          "grade_status": "completed"
+        }
+      },
+      {
+        "course_identification": {
+          "course_code": "BIO200",
+          "course_title": "Evolutionary Biology",
+          "course_description": "Evolutionary Biology"
+        },
+        "enrollment_details": {
+          "semester": "SUMMERFT",
+          "year": "2025",
+          "academic_period": "SUMMERFT 2025"
+        },
+        "credit_information": {
+          "credits_attempted": "5.50",
+          "credits_earned": "5.50",
+          "credit_type": "standard"
+        },
+        "grade_information": {
+          "letter_grade": "C-",
+          "pass_fail_indicator": "",
+          "grade_points": "",
+          "grade_status": "completed"
+        }
+      }
+    ],
+    "summary_statistics": {
+      "total_credits_attempted": "22.0",
+      "total_credits_earned": "18.0",
+      "total_courses": 7,
+      "overall_gpa": "2.7760"
+    }
+  },
+  "additional_information": {
+    "honors_awards": [],
+    "transfer_credits": [],
+    "notes": [],
+    "extracted_fields": {
+      "any_other_relevant_fields": {
+        "DOB": "09/2003",
+        "original_start_date": "1/06/2025",
+        "program": "French Culinary",
+        "status": "Active",
+        "enrollment_number": "34",
+        "weighted_gpa": "2.7905"
+      }
+    }
+  },
+  "raw_data": {
+    "extracted_text": "Date: 9/26/2025\nCampus Management School of Arts (Official) Official Transcript\nPage 1 of 2\n2306 Applegate Dr Union, NE 68455 www.campusmnt.com\nStudent:\nKai lgGPA\nStudent ID: 901031\nDOB: 09/2003\nOriginal Start Date: 1/06/2025\nStudent GPA: 2.7760\nCourse Code\nCourse Description\nCredits Attempted\nCredits Earned\nQuality Points\nGrade\nTerm: 2025_SPRING 2025 Jan - May 1/06/2025 - 5/30/2025\nBachelor of Science - French Culinary\nART110\nIntroduction to the Visual Arts (Repeat)\n2.00\n2.00\n5.40\nB-\nBIO200\nEvolutionary Biology\n5.50\n5.50\n11.00 C **\nDIV101\nDiversity (Repeat)\n2.00\n2.00\n6.60\nB+\nlgBIO200L\nlg Evolutionary Biology\n1.00\n1.00\n3.70\nA-\nSLI1\nScientific Literacy\n4.00\n0.00\n0.00\nW\nAttempted/Earned\nTerm GPA: 2.5429\nTerm: Credits\n14.50 / 10.50\nTerm Qual Pts: 26.70\nCum GPA: 2.5429\nCum: Credits\n10.50 / 10.50\nCum Qual Pts: 26.70\nTerm:JUNE2025 June 2025 6/01/2025 - 6/30/2025\nBachelor of Science - French Culinary\nDIV101 Diversity (Repeat)\n2.00\n2.00\n8.00 A R*\nAttempted/Earned\nTerm GPA: 4.0000\nTerm: Credits\n2.00 / 2.00\nTerm Qual Pts: 8.00\nCum GPA: 2.7760\nCum: Credits\n12.50 / 12.50\nCum Qual Pts: 34.70\nTerm: 2025_SUMMERFT\n2025 Jun - Aug 6/02/2025 - 8/01/2025\nBachelor of Science - French Culinary\nBIO200 Evolutionary Biology\n5.50\n5.50\n9.35 C-\nAttempted/Earned\nTerm GPA: 1.7000\nTerm: Credits\n5.50 / 5.50\nTerm Qual Pts: 9.35\nCum GPA: 2.7760\nCum: Credits\n12.50 / 12.50\nCum Qual Pts: 34.70\nProgram: French BA\nEnrollment #: 33\nStatus: Active\nGPA: 2.7760\nStart Date: 1/06/2025\nProgram:\nFrench Culinary\nEnrollment #: 34\nStatus: Active\nGPA: 2.7905\nStart Date: 1/06/2025\nIndicates Retaken Course R* Indicates Retaken Override\nNot official unless signed by Registrar\n# Indicates Pass/Fail Course + Indicates Associated Course\nDate: 9/26/2025\nCampus Management School of Arts (Official) Official Transcript\n2306 Applegate Dr Union, NE 68455 www.campusmnt.com\nPage 2 of 2\nStudent: Kai lgGPA\nStudent ID: 901031 DOB: 09/2003\nOriginal Start Date: 1/06/2025 Student GPA: 2.7760\nGPA\nCumulative GPA\nGrade Points\nNumber of Courses\nUnits Attempted\nUnits Earned\nlg Addl Gpa\n2.35\n4.70\n2\n7.50\n7.50\nUnweighted\nGPA\nCumulative GPA\nQuality Points\nQuality Units\nUnits Attempted\nUnits Earned\nlg Addl Gpa Average Retakes w/alt grade points\n2.79\n34.87\n12.50\n18.00\n18.00\nMaine Additional- Weighted 1\n0.00\n0.00\n0.00\n0.00\n0.00\nlg Addl Gpa by atribute- MostRecent\n1.97\n14.75\n7.50\n7.50\n7.50\nNew HOPE GPA\n2.50\n45.05\n18.00\n18.00\n18.00\nlg Addl Gpa by atribute- UseHighest\n2.19\n16.40\n7.50\n7.50\n7.50\nEngHigh\n2.19\n16.40\n7.50\n7.50\n7.50\nlg Addl Gpa by Prg - Most Recent\n2.64\n33.05\n12.50\n12.50\n12.50\nlg Addl Gpa by Prg - Use Highest\n2.78\n34.70\n12.50\n12.50\n12.50\nlg Addl Gpa by Prg - AvgRetakes\n2.71\n33.87\n12.50\n18.00\n18.00\nEnd of Transcript\nAuthorized Signature\nDate\n** Indicates Retaken Course R* Indicates Retaken Override\nNot official unless signed by Registrar\n# Indicates Pass/Fail Course + Indicates Associated Course",
+    "text_length": 2872
+  }
+}

@@ -1,0 +1,14 @@
+# Azure SDK packages
+azure-ai-documentintelligence>=1.0.0
+azure-core>=1.29.0
+openai>=1.0.0
+
+# Additional dependencies
+python-dotenv>=1.0.0
+Pillow>=10.0.0
+pathlib>=1.0.0
+
+# Development dependencies (optional)
+pytest>=7.0.0
+black>=23.0.0
+flake8>=6.0.0

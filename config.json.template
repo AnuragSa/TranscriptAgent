@@ -1,0 +1,11 @@
+{
+  "document_intelligence": {
+    "endpoint": "https://your-doc-intelligence-resource.cognitiveservices.azure.com/",
+    "key": "your-document-intelligence-key"
+  },
+  "azure_openai": {
+    "endpoint": "https://your-openai-resource.openai.azure.com/",
+    "key": "your-azure-openai-key",
+    "deployment_name": "gpt-35-turbo"
+  }
+}
